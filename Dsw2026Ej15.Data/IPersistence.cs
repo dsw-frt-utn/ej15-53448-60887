@@ -7,8 +7,12 @@ namespace Dsw2026Ej15.Data
 {
     public interface IPersistence
     {
-        List<Doctor> Doctors { get; }
         List<Speciality> Specialities { get; }
+        List<Doctor> Doctors { get; }
+
         void AddDoctor(Doctor doctor);
+        List<Doctor> GetActiveDoctors();
+        Doctor? GetActiveDoctorById(Guid id);
+        bool DeactivateDoctor(Guid id);
     }
 }
